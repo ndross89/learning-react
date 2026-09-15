@@ -1,10 +1,18 @@
 # React Project Setup
 
-Guide for scaffolding a React learning project with **Vite** and **JSX** (JavaScript). React’s docs recommend Vite when you want to learn React itself (routing, data fetching, and other app concerns come later).
+Guide for scaffolding a React learning project with **Vite** and **JSX** (JavaScript). React's docs recommend Vite when you want to learn React itself (routing, data fetching, and other app concerns come later).
 
 This repo uses **JSX, not TypeScript**.
 
 Create React App (CRA) is deprecated for new apps — do not use it.
+
+> **Install React Developer Tools now** — it is your most important debugging tool.
+> - [Chrome extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+> - [Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+>
+> Once installed, open browser DevTools and look for the **Components** tab to inspect the component tree, view props and state in real time, and trigger re-renders manually. The **Profiler** tab records render performance.
+
+---
 
 ## Prerequisites
 
@@ -14,6 +22,8 @@ Create React App (CRA) is deprecated for new apps — do not use it.
 | **npm** | Bundled with Node. Or use `pnpm` / `yarn` / `bun` if you prefer |
 
 Install Node from [nodejs.org](https://nodejs.org/) or via a version manager (`nvm`, `fnm`, `volta`).
+
+---
 
 ## 1. Scaffold the project
 
@@ -52,6 +62,8 @@ npm create vite@latest
 
 When prompted, choose **React** → **JavaScript**.
 
+---
+
 ## 2. Install dependencies
 
 ```bash
@@ -69,6 +81,8 @@ What the template installs for you:
 
 No TypeScript packages — components live in `.jsx` / `.js` files.
 
+---
+
 ## 3. Run the app
 
 ```bash
@@ -84,6 +98,8 @@ npm run build      # production build → dist/
 npm run preview    # serve the production build locally
 npm run lint       # run ESLint
 ```
+
+---
 
 ## 4. Project layout (what matters)
 
@@ -105,6 +121,8 @@ npm run lint       # run ESLint
 Entry flow: `index.html` → `src/main.jsx` → `<App />`.
 
 Use `.jsx` for files that contain JSX; plain `.js` is fine for non-UI helpers.
+
+---
 
 ## 5. Necessary configurations
 
@@ -151,7 +169,7 @@ export default Counter
 
 ### ESLint (`eslint.config.js`)
 
-Flat config with React Hooks and React Refresh rules. Run with `npm run lint`. Tighten rules as you get comfortable; don’t disable them wholesale.
+Flat config with React Hooks and React Refresh rules. Run with `npm run lint`. Tighten rules as you get comfortable; don't disable them wholesale.
 
 ### Environment variables
 
@@ -177,7 +195,130 @@ dist/
 !.env.example
 ```
 
-## 6. Sanity check
+---
+
+## 6. Add Prettier (code formatting)
+
+Prettier enforces consistent formatting automatically. This is standard in professional React projects.
+
+```bash
+npm install -D prettier
+```
+
+Create `.prettierrc` in the repo root:
+
+```json
+{
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "printWidth": 100,
+  "jsxSingleQuote": false
+}
+```
+
+Create `.prettierignore` in the repo root:
+
+```
+node_modules/
+dist/
+```
+
+Add a format script to `package.json`:
+
+```json
+"scripts": {
+  "format": "prettier --write \"src/**/*.{js,jsx,css}\""
+}
+```
+
+Run it:
+
+```bash
+npm run format
+```
+
+**Editor integration:** Install the [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) VS Code extension and enable **Format on Save** (`editor.formatOnSave: true` in settings).
+
+---
+
+## 7. Add testing (Vitest + React Testing Library)
+
+Each practice project installs its own testing dependencies. Here's the full setup to repeat per project.
+
+### Install
+
+```bash
+npm install -D vitest @testing-library/react @testing-library/user-event @testing-library/jest-dom jsdom
+```
+
+| Package | Role |
+| --- | --- |
+| `vitest` | Vite-native test runner |
+| `@testing-library/react` | Renders components in a simulated DOM |
+| `@testing-library/user-event` | Simulates real user interactions (click, type, etc.) |
+| `@testing-library/jest-dom` | Extra matchers: `toBeInTheDocument`, `toHaveValue`, etc. |
+| `jsdom` | Simulates a browser DOM environment in Node |
+
+### Configure `vite.config.js`
+
+Add a `test` block:
+
+```js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './src/test-setup.js',
+  },
+})
+```
+
+### Create `src/test-setup.js`
+
+```js
+import '@testing-library/jest-dom'
+```
+
+### Add test script to `package.json`
+
+```json
+"scripts": {
+  "test": "vitest",
+  "test:ui": "vitest --ui",
+  "coverage": "vitest run --coverage"
+}
+```
+
+### Write your first test
+
+```jsx
+// src/__tests__/App.test.jsx
+import { render, screen } from '@testing-library/react'
+import App from '../App'
+
+describe('App', () => {
+  it('renders without crashing', () => {
+    render(<App />)
+    expect(document.body).toBeInTheDocument()
+  })
+})
+```
+
+Run tests:
+
+```bash
+npm test               # watch mode
+npm test -- --run      # single run (CI)
+```
+
+---
+
+## 8. Sanity check
 
 After install:
 
@@ -185,23 +326,10 @@ After install:
 2. Edit `src/App.jsx` — page updates without a full refresh.
 3. `npm run build` — completes without errors.
 4. `npm run lint` — no unexpected failures.
+5. `npm run format` — formats source files (after Prettier is set up).
+6. `npm test -- --run` — tests pass (after Vitest is set up).
 
-## 7. Optional learning add-ons (later)
-
-Install only when a lesson needs them:
-
-```bash
-# Client routing
-npm install react-router
-
-# Component testing (Vitest + Testing Library)
-npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
-
-# CSS utilities (if you choose Tailwind)
-npm install -D tailwindcss @tailwindcss/vite
-```
-
-Prefer learning core React (components, props, state, effects, lists, forms) before adding a framework like Next.js.
+---
 
 ## Quick reference
 
@@ -215,12 +343,22 @@ npm run dev
 
 # quality
 npm run lint
+npm run format
 npm run build
+
+# test
+npm test
 ```
+
+---
 
 ## Official docs
 
 - [React: Build a React app from scratch](https://react.dev/learn/build-a-react-app-from-scratch)
 - [React: Creating a React app](https://react.dev/learn/creating-a-react-app)
+- [React Developer Tools](https://react.dev/learn/react-developer-tools)
 - [Vite: Getting started](https://vite.dev/guide/)
 - [Vite React template / plugin](https://vite.dev/plugins/#vitejs-plugin-react)
+- [Prettier](https://prettier.io/docs/en/install.html)
+- [Vitest](https://vitest.dev/guide/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)

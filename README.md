@@ -69,6 +69,7 @@ Work through these in order. Each phase has a concept guide, then a project to a
 - [**Setup Guide**](docs/setup.md) — scaffolding, install commands, Prettier, testing setup
 - [**Concept Roadmap**](docs/roadmap.md) — every React concept with examples, pitfalls, and project links
 - [**Projects Roadmap**](docs/projects.md) — all 7 projects with goals, acceptance criteria, and test strategy
+- [**Learning Resources**](docs/resources.md) — curated videos (with timestamps) and articles for every concept
 
 ---
 
