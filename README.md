@@ -33,90 +33,41 @@ Open `http://localhost:5173`.
 
 ```
 learning-react/
-├── src/                    # Main app (used for scratchpad / sandbox)
-├── projects/               # Practice projects — one folder each
-│   ├── 01-component-zoo/
-│   ├── 02-todo-app/
-│   ├── 03-weather-dashboard/
-│   ├── 04-multi-page-site/
-│   ├── 05-theme-auth-context/
-│   ├── 06-quiz-app/
-│   └── 07-job-board/       # Capstone
+├── src/                         # Sandbox — current practice build
+├── completed_projects/          # Snapshots of finished practice (e.g. first-project)
+├── learning_modules/            # Lessons, one folder per module
 └── docs/
-    ├── setup.md            # Install guide, configs, tooling
-    ├── roadmap.md          # 4-phase concept learning roadmap
-    └── projects.md         # 7-project build roadmap + capstone
+    ├── setup.md
+    └── react-learning-roadmap.md
 ```
 
 ---
 
 ## Learning Path
 
-Work through these in order. Each phase has a concept guide, then a project to apply it.
+Work the **10-module map**. Practice for Modules 4–10 is a Watchlist through-line in `src/`. The original UserCard / team-member builds are retired; `first-project` already covered that ground.
 
-| Phase | Topic | Weeks | Project |
-| --- | --- | --- | --- |
-| [Phase 1](docs/roadmap.md#phase-1--react-fundamentals) | React Fundamentals | 1–2 | [Component Zoo](projects/01-component-zoo/) |
-| [Phase 2](docs/roadmap.md#phase-2--hooks--side-effects) | Hooks & Side Effects | 3–4 | [Todo App](projects/02-todo-app/) + [Weather Dashboard](projects/03-weather-dashboard/) |
-| [Phase 3](docs/roadmap.md#phase-3--scaling-react) | Scaling React | 5–6 | [Multi-Page Site](projects/04-multi-page-site/) + [Theme & Auth](projects/05-theme-auth-context/) |
-| [Phase 4](docs/roadmap.md#phase-4--professional-patterns) | Professional Patterns | 7–8 | [Quiz App](projects/06-quiz-app/) |
-| Capstone | Everything | 9–10 | [Job Board](projects/07-job-board/) |
+| Module | Topic | Status |
+| --- | --- | --- |
+| 1 | Mental model | Complete — reference |
+| 2 | First project review | Recap |
+| 3 | Props | Recap |
+| 4 | Lists, keys, show/hide | Gap + Watchlist start |
+| 5 | useState | Recap |
+| 6 | Controlled inputs | **Next new skill** |
+| 7 | Forms | Upcoming |
+| 8 | useEffect | Upcoming |
+| 9 | Lifting state | Upcoming |
+| 10 | Router + Supabase | Upcoming |
+
+Full assessment, retired exercises, and links: [docs/react-learning-roadmap.md](docs/react-learning-roadmap.md).
 
 ---
 
 ## Documentation
 
 - [**Setup Guide**](docs/setup.md) — scaffolding, install commands, Prettier, testing setup
-- [**Concept Roadmap**](docs/roadmap.md) — every React concept with examples, pitfalls, and project links
-- [**Projects Roadmap**](docs/projects.md) — all 7 projects with goals, acceptance criteria, and test strategy
-- [**Learning Resources**](docs/resources.md) — curated videos (with timestamps) and articles for every concept
-
----
-
-## Progress Tracker
-
-Check these off as you complete them.
-
-### Phase 1 — React Fundamentals
-- [ ] JSX & the component mental model
-- [ ] Function components & props
-- [ ] `useState` — local state
-- [ ] Event handling
-- [ ] Lists & keys
-- [ ] Conditional rendering
-- [ ] Controlled forms & inputs
-- [ ] **Project: 01-component-zoo**
-- [ ] **Project: 02-todo-app** (first half)
-
-### Phase 2 — Hooks & Side Effects
-- [ ] `useEffect` — side effects, dependency array, cleanup
-- [ ] Fetching data with `fetch` + `async/await`
-- [ ] Loading and error states
-- [ ] `useRef`
-- [ ] Custom hooks
-- [ ] Lifting state up / prop drilling
-- [ ] `useMemo` & `useCallback`
-- [ ] **Project: 02-todo-app** (complete)
-- [ ] **Project: 03-weather-dashboard**
-
-### Phase 3 — Scaling React
-- [ ] React Router v7 — routes, NavLink, useParams, loaders
-- [ ] Context API + `useContext`
-- [ ] `useReducer`
-- [ ] Error Boundaries
-- [ ] **Project: 04-multi-page-site**
-- [ ] **Project: 05-theme-auth-context**
-
-### Phase 4 — Professional Patterns
-- [ ] Vitest + React Testing Library
-- [ ] `React.memo`, `lazy`, `Suspense`
-- [ ] Compound components & render props
-- [ ] Accessibility in React (ARIA, focus, semantics)
-- [ ] Environment variables (`VITE_*`)
-- [ ] **Project: 06-quiz-app**
-
-### Capstone
-- [ ] **Project: 07-job-board** — all skills combined
+- [**Learning Map**](docs/react-learning-roadmap.md) — 10 modules, assessment of `first-project`, Watchlist practices
 
 ---
 
