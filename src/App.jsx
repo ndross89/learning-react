@@ -1,7 +1,21 @@
 import './App.css'
+import { CreateCards } from './components/Shows.jsx'
+import { useState } from 'react'
 
 function App() {
-  return <></>
+  const [query, setQuery] = useState('')
+
+  return (
+    <>
+      <input
+        type="text"
+        placeholder="search movie here"
+        value={query}
+        onChange={(event) => setQuery(event.target.value)}
+      ></input>
+      <CreateCards query={query} />
+    </>
+  )
 }
 
 export default App
