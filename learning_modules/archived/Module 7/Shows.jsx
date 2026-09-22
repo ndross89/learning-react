@@ -1,12 +1,14 @@
 import { useState } from 'react'
 
-const Watchlist = [
-  { id: 1, title: 'Silo', genre: 'Sci-fi', watched: true },
-  { id: 2, title: 'Jury Duty', genre: 'Comedy', watched: true },
-  { id: 3, title: 'Wednesday', genre: 'Thriller', watched: false },
-  { id: 4, title: 'The Flash', genre: 'Action', watched: false },
-  { id: 5, title: 'Teach You A Lesson', genre: 'Action', watched: true },
-]
+import { initialShows } from './Data'
+
+export const updateShows = ({ title, genre, watched }) => {
+  const newCard = {
+    title: { title },
+    genre: { genre },
+    watched,
+  }
+}
 
 const ShowCard = ({ title, genre, watched }) => {
   const [markFavorite, setMarkFavorite] = useState(false)

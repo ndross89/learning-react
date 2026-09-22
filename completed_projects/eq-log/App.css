@@ -1,0 +1,92 @@
+.submission {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.submission h1 {
+  margin: 0 0 var(--space-sm);
+  font-size: 1.75rem;
+}
+
+.submission label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.submission input {
+  min-height: var(--touch-min);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.submission input::placeholder {
+  color: var(--color-empty);
+}
+
+.submission button {
+  min-height: var(--touch-min);
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submission button:hover {
+  background: var(--color-accent-hover);
+}
+
+.submission input:focus-visible,
+.submission button:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.display {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.display > h1 {
+  margin: 0;
+  padding: var(--space-lg);
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-empty);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+}
+
+.emotion-card {
+  margin: 0;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.emotion-card h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}

@@ -1,0 +1,74 @@
+:root {
+  --color-bg: #f4efe6;
+  --color-surface: #fffaf3;
+  --color-text: #2c241c;
+  --color-muted: #6b5e52;
+  --color-accent: #3d6b5a;
+  --color-accent-hover: #2f5446;
+  --color-accent-text: #fffaf3;
+  --color-border: #d9cfc3;
+  --color-focus: #3d6b5a;
+  --color-empty: #8a7b6c;
+  --font-family: 'Segoe UI', system-ui, sans-serif;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --radius: 0.75rem;
+  --shadow: 0 0.5rem 1.5rem rgb(44 36 28 / 0.08);
+  --touch-min: 2.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1c1916;
+    --color-surface: #2a2520;
+    --color-text: #f4efe6;
+    --color-muted: #c4b8aa;
+    --color-accent: #7eb89e;
+    --color-accent-hover: #97cbb3;
+    --color-accent-text: #1c1916;
+    --color-border: #4a423a;
+    --color-focus: #7eb89e;
+    --color-empty: #b5a89a;
+    --shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.35);
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-text: #000000;
+    --color-muted: #000000;
+    --color-accent: #00553a;
+    --color-accent-hover: #003d29;
+    --color-accent-text: #ffffff;
+    --color-border: #000000;
+    --color-focus: #000000;
+    --color-empty: #000000;
+    --shadow: none;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+#root {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}

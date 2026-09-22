@@ -1,5 +1,5 @@
 import './App.css'
-import { RenderCards } from './components/Shows.jsx'
+import { RenderCards } from './components/Shows.js'
 
 function App() {
   return (

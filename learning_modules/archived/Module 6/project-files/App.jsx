@@ -1,5 +1,5 @@
 import './App.css'
-import { CreateCards } from './components/Shows.jsx'
+import { CreateCards } from './components/Shows.js'
 import { useState } from 'react'
 
 function App() {
