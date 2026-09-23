@@ -1,54 +1,35 @@
 :root {
-  --color-bg: #f4efe6;
-  --color-surface: #fffaf3;
-  --color-text: #2c241c;
-  --color-muted: #6b5e52;
-  --color-accent: #3d6b5a;
-  --color-accent-hover: #2f5446;
-  --color-accent-text: #fffaf3;
-  --color-border: #d9cfc3;
-  --color-focus: #3d6b5a;
-  --color-empty: #8a7b6c;
-  --font-family: 'Segoe UI', system-ui, sans-serif;
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2.5rem;
-  --radius: 0.75rem;
-  --shadow: 0 0.5rem 1.5rem rgb(44 36 28 / 0.08);
-  --touch-min: 2.75rem;
+  --color-bg: #f2f2f2;
+  --color-surface: #ffffff;
+  --color-surface-muted: #e8e8e8;
+  --color-text: #111111;
+  --color-text-muted: #5a5a5a;
+  --color-border: #d0d0d0;
+  --color-border-strong: #111111;
+  --color-focus: #111111;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --shadow: 0 1px 2px rgb(0 0 0 / 8%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #1c1916;
-    --color-surface: #2a2520;
-    --color-text: #f4efe6;
-    --color-muted: #c4b8aa;
-    --color-accent: #7eb89e;
-    --color-accent-hover: #97cbb3;
-    --color-accent-text: #1c1916;
-    --color-border: #4a423a;
-    --color-focus: #7eb89e;
-    --color-empty: #b5a89a;
-    --shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.35);
-  }
-}
-
-@media (prefers-contrast: more) {
-  :root {
-    --color-bg: #ffffff;
-    --color-surface: #ffffff;
-    --color-text: #000000;
-    --color-muted: #000000;
-    --color-accent: #00553a;
-    --color-accent-hover: #003d29;
-    --color-accent-text: #ffffff;
-    --color-border: #000000;
-    --color-focus: #000000;
-    --color-empty: #000000;
-    --shadow: none;
+    --color-bg: #111111;
+    --color-surface: #1c1c1c;
+    --color-surface-muted: #2a2a2a;
+    --color-text: #f5f5f5;
+    --color-text-muted: #b5b5b5;
+    --color-border: #3a3a3a;
+    --color-border-strong: #f5f5f5;
+    --color-focus: #ffffff;
+    --shadow: 0 1px 2px rgb(0 0 0 / 40%);
   }
 }
 
@@ -61,14 +42,12 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: var(--font-family);
   background: var(--color-bg);
   color: var(--color-text);
+  font-family: var(--font-sans);
   line-height: 1.5;
 }
 
 #root {
-  max-width: 36rem;
-  margin: 0 auto;
-  padding: var(--space-xl) var(--space-md);
+  min-height: 100vh;
 }
