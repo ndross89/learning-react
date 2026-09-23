@@ -1,67 +1,29 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import InsightCard from './components/InsightCard'
+import CheckInForm from './components/CheckInForm'
+import SummaryBar from './components/SummaryBar'
+import CheckInList from './components/CheckInList'
 
 function App() {
-  const [posts, setPosts] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  const [filterUserId, setFilterUserId] = useState('all')
+  const [entries, setEntries] = useState([])
+
+  function handleAddEntry(entry) {
+    setEntries([...entries, entry])
+  }
 
   useEffect(() => {
-    async function fetchPosts() {
-      try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-        if (!response.ok) throw new Error('Failed to fetch posts.')
-        const data = await response.json()
-        setPosts(data)
-      } catch (err) {
-        setError(err.message)
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchPosts()
-  }, [])
-  const filteredPosts =
-    filterUserId === 'all' ? posts : posts.filter((post) => post.userId === Number(filterUserId))
-
+    console.log(entries)
+  }, [entries])
   return (
-    <main className="app">
-      <header className="app__header">
-        <div>
-          <p className="app__eyebrow">ApricityEQ</p>
-          <h1 className="app__title">Team Insight Feed</h1>
-        </div>
-        <label className="filter">
-          Team member
-          <select
-            className="filter__select"
-            value={filterUserId}
-            onChange={(event) => setFilterUserId(event.target.value)}
-          >
-            <option value={'all'}>All Users</option>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((id) => (
-              <option key={id} value={id}>
-                User {id}
-              </option>
-            ))}
-          </select>
-        </label>
+    <main className="board">
+      <header className="board-header">
+        <p className="board-kicker">ApricityEQ</p>
+        <h1>EQ Check-In Board</h1>
+        <p>Log how you feel. The summary and the log stay in sync.</p>
       </header>
-      {loading && <p className="status">Data is loading...</p>}
-      {error && (
-        <p className="status status--error" role="alert">
-          {error}
-        </p>
-      )}
-      {!loading && !error && (
-        <section className="feed" aria-label="Team insights">
-          {filteredPosts.map((post) => (
-            <InsightCard key={post.id} title={post.title} body={post.body} />
-          ))}
-        </section>
-      )}
+      <CheckInForm onAddEntry={handleAddEntry} />
+      <SummaryBar entries={entries} />
+      <CheckInList entries={entries} />
     </main>
   )
 }
