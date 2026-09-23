@@ -1,30 +1,35 @@
-import { useState, useEffect } from 'react'
 import './App.css'
-import CheckInForm from './components/CheckInForm'
-import SummaryBar from './components/SummaryBar'
-import CheckInList from './components/CheckInList'
+import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router'
+import Home from './components/Home.jsx'
+import About from './components/About.jsx'
+import NoMatch from './components/NoMatch.jsx'
 
 function App() {
-  const [entries, setEntries] = useState([])
-
-  function handleAddEntry(entry) {
-    setEntries([...entries, entry])
-  }
-
-  useEffect(() => {
-    console.log(entries)
-  }, [entries])
   return (
-    <main className="board">
-      <header className="board-header">
-        <p className="board-kicker">ApricityEQ</p>
-        <h1>EQ Check-In Board</h1>
-        <p>Log how you feel. The summary and the log stay in sync.</p>
-      </header>
-      <CheckInForm onAddEntry={handleAddEntry} />
-      <SummaryBar entries={entries} />
-      <CheckInList entries={entries} />
-    </main>
+    <BrowserRouter>
+      <nav style={{ margin: 10 }}>
+        <NavLink
+          to="/"
+          style={({ isActive }) => ({ padding: 5, ...(isActive ? { color: 'red' } : {}) })}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/about"
+          style={({ isActive }) => ({
+            padding: 5,
+            ...(isActive ? { color: 'red' } : {}),
+          })}
+        >
+          About
+        </NavLink>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
