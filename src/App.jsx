@@ -1,35 +1,24 @@
 import './App.css'
-import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router'
-import Home from './components/Home.jsx'
-import About from './components/About.jsx'
-import NoMatch from './components/NoMatch.jsx'
+import { Routes, Route } from 'react-router'
+import NavBar from './components/NavBar'
+import Home from './pages/Home'
+import Resources from './pages/Resources'
+import ResourceDetails from './pages/ResourceDetails'
+import NotFound from './pages/NotFound'
 
 function App() {
   return (
-    <BrowserRouter>
-      <nav style={{ margin: 10 }}>
-        <NavLink
-          to="/"
-          style={({ isActive }) => ({ padding: 5, ...(isActive ? { color: 'red' } : {}) })}
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/about"
-          style={({ isActive }) => ({
-            padding: 5,
-            ...(isActive ? { color: 'red' } : {}),
-          })}
-        >
-          About
-        </NavLink>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<NoMatch />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="app">
+      <NavBar />
+      <main className="page">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/resources/:id" element={<ResourceDetails />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+    </div>
   )
 }
 
