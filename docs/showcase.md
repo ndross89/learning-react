@@ -50,7 +50,7 @@ Edits in `src/` do not change a demo. Update the copy in `completed_projects/<sl
 
 ## Vercel
 
-`vercel.json` sets the build command to `npm run build:showcase` and the output directory to `dist`.
+`vercel.json` sets the build command to `npm run build:showcase` and the output directory to `dist`. The click-by-click setup, including the Supabase table and keys, is in [vercel-showcase-setup.md](vercel-showcase-setup.md).
 
 ### EQ Resource Hub
 

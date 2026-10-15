@@ -30,11 +30,5 @@
     "title": "Reflection Log",
     "summary": "A short log for writing reflections.",
     "dir": "completed_projects/reflection-log"
-  },
-  {
-    "slug": "team-insight-feed",
-    "title": "Team Insight Feed",
-    "summary": "A feed of sample posts loaded from a public API.",
-    "dir": "completed_projects/team-insight-feed"
   }
 ]
