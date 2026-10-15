@@ -1,0 +1,97 @@
+:root {
+  --ink: #1b2440;
+  --muted: #5a6280;
+  --blue: #2d6bff;
+  --blue-deep: #173ea8;
+  --blue-wash: #e6efff;
+  --pink: #ef4d93;
+  --pink-deep: #c23374;
+  --pink-wash: #ffe3ef;
+  --peach: #e07a45;
+  --peach-ink: #8d3f12;
+  --peach-wash: #fff0e6;
+  --mint: #1a9a82;
+  --mint-wash: #e3f7f2;
+  --indigo: #5b4dff;
+  --indigo-wash: #eeebff;
+  --paper: #fffdfb;
+  --canvas: #f7eef3;
+  --line: #efd4e2;
+  --shadow: 0 16px 36px rgba(40, 52, 110, 0.08);
+  --radius: 20px;
+  --font-display: 'Fraunces', 'Iowan Old Style', Palatino, serif;
+  --font-body: 'Outfit', 'Avenir Next', 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f6eef4;
+    --muted: #c8bdd0;
+    --blue: #8eb0ff;
+    --blue-deep: #d5e2ff;
+    --blue-wash: #24345f;
+    --pink: #ff8ab8;
+    --pink-deep: #ffd0e4;
+    --pink-wash: #4a2340;
+    --peach: #ffb089;
+    --peach-ink: #ffc7a8;
+    --peach-wash: #4a2e24;
+    --mint: #7ee0cb;
+    --mint-wash: #1c3d38;
+    --indigo: #b7afff;
+    --indigo-wash: #2c2854;
+    --paper: #1c1830;
+    --canvas: #120f20;
+    --line: #3c3148;
+    --shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% -10%, var(--blue-wash), transparent 36%),
+    radial-gradient(circle at 100% 0%, var(--pink-wash), transparent 32%),
+    var(--canvas);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 560;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

@@ -1,23 +1,27 @@
 import './App.css'
-import { Routes, Route } from 'react-router'
-import NavBar from './components/NavBar'
+import { Route, Routes } from 'react-router'
 import Home from './pages/Home'
-import Resources from './pages/Resources'
-import ResourceDetails from './pages/ResourceDetails'
-import NotFound from './pages/NotFound'
+import NavBar from './components/NavBar'
+import MenuPage from './pages/MenuPage'
+import Contact from './pages/Contact'
+import ContactExample from './pages/ContactExample'
+import Footer from './components/Footer'
+import MenuDetails from './pages/MenuDetails'
 
 function App() {
   return (
-    <div className="app">
+    <div className="app-shell">
       <NavBar />
-      <main className="page">
+      <main className="app-main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/resources/:id" element={<ResourceDetails />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/menu/:id" element={<MenuDetails />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact-example" element={<ContactExample />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   )
 }

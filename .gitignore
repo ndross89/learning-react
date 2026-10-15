@@ -15,6 +15,9 @@ dist-ssr
 .env.*
 !.env.example
 
+# Database password from the Supabase dashboard. Not an API key. Never commit.
+docs/supabase-password.text
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

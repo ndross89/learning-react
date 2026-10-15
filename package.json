@@ -6,11 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:showcase": "node scripts/build-showcase.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
+    "preview:showcase": "vite preview --outDir dist",
     "format": "prettier --write \"src/**/*.{js,jsx,css}\""
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.117.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router": "^8.4.0"

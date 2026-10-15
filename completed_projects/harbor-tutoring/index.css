@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@500;600;700&display=swap');
+
+:root {
+  --color-bg-top: #d9ebe6;
+  --color-bg-mid: #eef4f1;
+  --color-bg-bottom: #f7f3ea;
+  --color-surface: #fffcf7;
+  --color-surface-muted: #f1f6f4;
+  --color-ink: #1a2e2a;
+  --color-ink-soft: #4a5f59;
+  --color-brand: #0f5c52;
+  --color-brand-deep: #0a3f38;
+  --color-accent: #c45c26;
+  --color-accent-hover: #a84c1d;
+  --color-accent-text: #fffaf5;
+  --color-arrived: #1f7a4d;
+  --color-arrived-bg: #e4f4eb;
+  --color-scheduled-bg: #eef2f0;
+  --color-border: #c9d8d2;
+  --color-border-strong: #8eaaa1;
+  --color-focus: #0f5c52;
+  --color-math: #2f6f8f;
+  --color-reading: #8a4d2f;
+  --color-science: #3d6b45;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --radius-sm: 0.55rem;
+  --radius-md: 0.9rem;
+  --shadow: 0 0.75rem 1.75rem rgb(26 46 42 / 0.08);
+  --touch-min: 2.75rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-top: #0c1c1a;
+    --color-bg-mid: #122421;
+    --color-bg-bottom: #182824;
+    --color-surface: #1c2f2b;
+    --color-surface-muted: #243934;
+    --color-ink: #eef5f2;
+    --color-ink-soft: #b7c9c3;
+    --color-brand: #7fd4c4;
+    --color-brand-deep: #9fe0d3;
+    --color-accent: #e08a55;
+    --color-accent-hover: #ef9d6c;
+    --color-accent-text: #1a150f;
+    --color-arrived: #7dcca0;
+    --color-arrived-bg: #1d3a2c;
+    --color-scheduled-bg: #243934;
+    --color-border: #335049;
+    --color-border-strong: #5c7d73;
+    --color-focus: #7fd4c4;
+    --color-math: #7db7d4;
+    --color-reading: #e0a57f;
+    --color-science: #8fc89a;
+    --shadow: 0 0.75rem 1.75rem rgb(0 0 0 / 0.35);
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-bg-top: #ffffff;
+    --color-bg-mid: #ffffff;
+    --color-bg-bottom: #ffffff;
+    --color-surface: #ffffff;
+    --color-ink: #000000;
+    --color-ink-soft: #000000;
+    --color-brand: #00332d;
+    --color-accent: #7a2e00;
+    --color-border: #000000;
+    --color-border-strong: #000000;
+    --shadow: none;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  line-height: 1.5;
+  background:
+    radial-gradient(ellipse 70% 45% at 12% -10%, rgb(15 92 82 / 0.18), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 92% 8%, rgb(196 92 38 / 0.12), transparent 50%),
+    linear-gradient(165deg, var(--color-bg-top), var(--color-bg-mid) 42%, var(--color-bg-bottom));
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+select {
+  font: inherit;
+}

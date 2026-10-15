@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "alder-oaks",
+    "title": "Alder & Oaks",
+    "summary": "A coffee shop menu with item pages and a contact form.",
+    "dir": "completed_projects/alder-oaks",
+    "spa": true
+  },
+  {
+    "slug": "harbor-tutoring",
+    "title": "Harbor Tutoring",
+    "summary": "A session tracker for students arriving to tutoring.",
+    "dir": "completed_projects/harbor-tutoring"
+  },
+  {
+    "slug": "eq-resource-hub",
+    "title": "EQ Resource Hub",
+    "summary": "A small library of emotional intelligence resources.",
+    "dir": "completed_projects/eq-resource-hub",
+    "spa": true
+  },
+  {
+    "slug": "eq-checkin-board",
+    "title": "EQ Check-In Board",
+    "summary": "A board for logging how someone is feeling.",
+    "dir": "completed_projects/eq-checkin-board"
+  },
+  {
+    "slug": "reflection-log",
+    "title": "Reflection Log",
+    "summary": "A short log for writing reflections.",
+    "dir": "completed_projects/reflection-log"
+  },
+  {
+    "slug": "team-insight-feed",
+    "title": "Team Insight Feed",
+    "summary": "A feed of sample posts loaded from a public API.",
+    "dir": "completed_projects/team-insight-feed"
+  }
+]

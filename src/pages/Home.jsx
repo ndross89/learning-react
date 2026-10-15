@@ -1,18 +1,19 @@
 import { Link } from 'react-router'
+import { WhyUsCards } from '../components/WhyUs'
 
-function Home() {
+const Home = () => {
   return (
-    <section className="home">
-      <p className="eyebrow">EQ Resource Hub</p>
-      <h1>Learn emotional intelligence, one resource at a time</h1>
-      <p className="lede">
-        ApricityEQ publishes practical guides on self-awareness, regulation, empathy, and how teams
-        work together. Start with the library.
-      </p>
-      <Link to="/resources" className="button">
-        Browse resources
-      </Link>
-    </section>
+    <div className="page">
+      <section className="hero">
+        <h1 className="hero__title">Small-batch coffee, made slow</h1>
+        <div className="hero__actions">
+          <Link to="/menu" className="btn">
+            See the menu
+          </Link>
+        </div>
+      </section>
+      <WhyUsCards />
+    </div>
   )
 }
 

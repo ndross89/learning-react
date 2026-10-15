@@ -1,0 +1,9 @@
+{
+  "framework": null,
+  "buildCommand": "npm run build:showcase",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/alder-oaks/(.*)", "destination": "/alder-oaks/index.html" },
+    { "source": "/eq-resource-hub/(.*)", "destination": "/eq-resource-hub/index.html" }
+  ]
+}

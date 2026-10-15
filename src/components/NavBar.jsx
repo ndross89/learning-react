@@ -1,18 +1,18 @@
 import { Link, NavLink } from 'react-router'
 
-function NavBar() {
+const NavBar = () => {
   return (
     <header className="site-header">
-      <nav className="nav">
-        <Link to="/" className="brand">
-          <span className="brand-mark" aria-hidden="true" />
-          EQ Hub
+      <nav className="site-nav" aria-label="Primary">
+        <Link to="/" className="site-nav__brand">
+          Alder & Oaks Coffee
         </Link>
-        <div className="nav-links">
+        <div className="site-nav__links">
           <NavLink to="/" end>
             Home
           </NavLink>
-          <NavLink to="/resources">Resources</NavLink>
+          <NavLink to="/menu">Menu</NavLink>
+          <NavLink to="/contact">Contact Us</NavLink>
         </div>
       </nav>
     </header>

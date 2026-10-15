@@ -1,0 +1,43 @@
+.showcase-bar {
+  --bar-bg: #1c1917;
+  --bar-ink: #faf6f1;
+  --bar-line: #3f3832;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+  padding: 0.35rem 0.75rem;
+  background: var(--bar-bg);
+  color: var(--bar-ink);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  border-bottom: 1px solid var(--bar-line);
+}
+
+.showcase-bar__title {
+  flex: 1 1 12rem;
+  margin: 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.showcase-bar a {
+  color: var(--bar-ink);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 0.35rem;
+}
+
+.showcase-bar a:focus-visible {
+  outline: 2px solid var(--bar-ink);
+  outline-offset: 2px;
+}
